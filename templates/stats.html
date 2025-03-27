@@ -1,0 +1,42 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Статистика по терминам
+{% endblock %}
+
+{% block page-lead %}
+Перед тем, как отрендерить эту страницу, веб-приложение ходит в файл/БД, обновляет статистики, а затем подставляет их в шаблон страницы.
+Всё это можно посмотреть в файле <code>views.py</code>.
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="stats">
+    <div>
+        <h3 class="py-2">Количество терминов</h3>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>{{ films_all }}</h4>
+            <p class="text-muted">всего</p>
+        </div>
+    </div>
+    <div>
+        <h3 class="py-2">Описания</h3>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>{{ title_len_avg }}</h4>
+            <p class="text-muted">слов в среднем</p>
+        </div>
+        <div class="col-sm-4">
+            <h4>{{ title_len_max }}</h4>
+            <p class="text-muted">максимум</p>
+        </div>
+        <div class="col-sm-4">
+            <h4>{{ title_len_min }}</h4>
+            <p class="text-muted">минимум</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
